@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">MovilesSoftware2023A</string>
-    <string name="bienvenida">Bienvenida</string>
+    <string name="app_name" translatable="false">MovilesSoftware2023A</string>
+    <string name="bienvenida">Bienvenida Portrait</string>
 </resources>
