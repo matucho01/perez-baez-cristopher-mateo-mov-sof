@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name" translatable="false">MovilesSoftware2023A</string>
+    <string name="app_name">movilessw2023a</string>
     <string name="bienvenida">Bienvenida Portrait</string>
     <string name="title_activity_aaciclo_vida">AACicloVida</string>
     <!-- Strings used for fragments for navigation -->

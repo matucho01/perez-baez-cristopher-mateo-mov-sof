@@ -1,7 +1,5 @@
-package com.example.movilessoftware2023a
+package com.example.movilessw2023a
 
-import android.app.Activity
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
@@ -10,5 +8,4 @@ class ACicloVida : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_aciclo_vida)
     }
-
 }
