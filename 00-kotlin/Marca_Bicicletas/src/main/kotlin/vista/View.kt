@@ -86,7 +86,10 @@ class View(private val controller: Controller) {
                 }
                 2 -> controller.mostrarBicicletas()
                 3 -> controller.actualizarBicicleta()
-                4 -> controller.eliminarBicicleta()
+                4 -> {
+                    controller.mostrarBicicletas()
+                    controller.eliminarBicicleta()
+                }
                 5 -> mostrarMenu()
                 else -> println("Opción incorrecta")
             }
