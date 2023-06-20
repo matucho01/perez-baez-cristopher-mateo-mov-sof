@@ -27,7 +27,7 @@ class Crud(
         )
         marcas.add(marca)
 
-        guardarDatos()
+        guardarEnArchivo()
 
         println("Marca creada exitosamente")
     }
@@ -62,7 +62,7 @@ class Crud(
             marca.fechaCreacion = nuevaFechaCreacion
             marca.sede = nuevaSede
 
-            guardarDatos()
+            guardarEnArchivo()
 
             println("Marca actualizada")
         } else {
@@ -75,11 +75,11 @@ class Crud(
         val maxIdMarca: Int = marcas.maxOfOrNull { it.id } ?: 0
 
         while (true) {
-            val id = console.obtenerInt("Ingrese el ID de la marca a eliminar: ")
+            val id = console.obtenerInt("Ingresa el ID de la marca a eliminar: ")
 
             if (id in 1..maxIdMarca) {
                 eliminarMarcaPorId(id)
-                guardarDatos()
+                guardarEnArchivo()
                 println("Marca eliminada")
                 break
             } else {
@@ -89,7 +89,7 @@ class Crud(
     }
 
     fun crearBicicletaAMarca() {
-        val marcaId = console.obtenerTexto("Ingrese el ID de la marca: ").toIntOrNull()
+        val marcaId = console.obtenerTexto("Ingresa el ID de la marca: ").toIntOrNull()
         if (marcaId != null) {
             agregarBicicleta(marcaId)
         } else {
@@ -109,7 +109,7 @@ class Crud(
                 marcaId = marcaId
             )
             marca.bicicletas.add(bicicleta)
-            guardarDatos()
+            guardarEnArchivo()
             println("Bicicleta agregada")
         } else {
             println("Marca no encontrada")
@@ -154,7 +154,7 @@ class Crud(
                     bicicleta.anio = nuevoAnio
                     bicicleta.precio = nuevoPrecio
 
-                    guardarDatos()
+                    guardarEnArchivo()
 
                     println("Bicicleta actualizada")
                 } else {
@@ -182,7 +182,7 @@ class Crud(
 
         marca?.bicicletas?.remove(bicicleta)
 
-        guardarDatos()
+        guardarEnArchivo()
     }
 
     private fun generarNuevoIdMarca(): Int {
@@ -210,9 +210,9 @@ class Crud(
         return bicicletas
     }
 
-    private fun guardarDatos() {
+    private fun guardarEnArchivo() {
         val json = gson.toJson(marcas)
-        val file = File("marcas.json")
+        val file = File("src/main/resources/marcas.json")
         file.writeText(json)
     }
 
@@ -231,7 +231,7 @@ class Crud(
     }
 
     private fun cargarDatos() {
-        val file = File("marcas.json")
+        val file = File("src/main/resources/marcas.json")
         if (file.exists()) {
             val json = file.readText()
             val marcaArray = gson.fromJson(json, Array<Marca>::class.java)
