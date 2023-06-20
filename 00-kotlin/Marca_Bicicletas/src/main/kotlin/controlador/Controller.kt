@@ -1,16 +1,16 @@
 package controlador
 
-import vista.Console
+import vista.View
 import com.google.gson.Gson
 import modelo.Bicicleta
 import modelo.Marca
 import java.io.File
 
-class Crud(
+class Controller(
     private val gson: Gson
 ) {
     private val marcas: MutableList<Marca> = mutableListOf()
-    private val console: Console = Console(this)
+    private val view: View = View(this)
 
     init {
         cargarDatos()
@@ -19,11 +19,11 @@ class Crud(
     fun agregarMarca() {
         val marca = Marca(
             id = generarNuevoIdMarca(),
-            nombre = console.obtenerTexto("Ingrese el nombre de la marca: "),
-            pais = console.obtenerTexto("País de origen: "),
+            nombre = view.obtenerTexto("Ingrese el nombre de la marca: "),
+            pais = view.obtenerTexto("País de origen: "),
             //fechaCreacion = console.obtenerFecha("Fecha de creación (YYYY-MM-DD): "),
-            fechaCreacion = console.obtenerTexto("Fecha de creación (YYYY-MM-DD): "),
-            sede = console.obtenerTexto("Sede: ")
+            fechaCreacion = view.obtenerTexto("Fecha de creación (YYYY-MM-DD): "),
+            sede = view.obtenerTexto("Sede: ")
         )
         marcas.add(marca)
 
@@ -32,7 +32,7 @@ class Crud(
         println("Marca creada exitosamente")
     }
 
-    fun listarMarcas() {
+    fun mostrarMarcas() {
         if (marcas.isNotEmpty()) {
             println("Marcas:")
             for (marca in marcas) {
@@ -45,17 +45,17 @@ class Crud(
 
     fun actualizarMarca() {
 
-        listarMarcas()
-        val idMarca = console.obtenerInt("Ingresa el ID de la marca a actualizar: ")
+        mostrarMarcas()
+        val idMarca = view.obtenerInt("Ingresa el ID de la marca a actualizar: ")
         val marca = obtenerMarcaPorId(idMarca)
 
         if (marca != null) {
             println("Ingresa los nuevos datos de la marca:")
-            val nuevoNombre = console.obtenerTexto("Nuevo nombre de la marca: ")
-            val nuevoPais = console.obtenerTexto("Nuevo país: ")
+            val nuevoNombre = view.obtenerTexto("Nuevo nombre de la marca: ")
+            val nuevoPais = view.obtenerTexto("Nuevo país: ")
             //val nuevaFechaCreacion = console.obtenerFecha("Nueva fecha de creación (YYYY-MM-DD): ")
-            val nuevaFechaCreacion = console.obtenerTexto("Nueva fecha de creación (YYYY-MM-DD): ")
-            val nuevaSede = console.obtenerTexto("Nueva sede: ")
+            val nuevaFechaCreacion = view.obtenerTexto("Nueva fecha de creación (YYYY-MM-DD): ")
+            val nuevaSede = view.obtenerTexto("Nueva sede: ")
 
             marca.nombre = nuevoNombre
             marca.pais = nuevoPais
@@ -70,12 +70,11 @@ class Crud(
         }
     }
 
-
     fun eliminarMarca() {
         val maxIdMarca: Int = marcas.maxOfOrNull { it.id } ?: 0
 
         while (true) {
-            val id = console.obtenerInt("Ingresa el ID de la marca a eliminar: ")
+            val id = view.obtenerInt("Ingresa el ID de la marca a eliminar: ")
 
             if (id in 1..maxIdMarca) {
                 eliminarMarcaPorId(id)
@@ -83,17 +82,17 @@ class Crud(
                 println("Marca eliminada")
                 break
             } else {
-                println("Entrada inválida, intenta de nuevo")
+                println("Entrada incorrecta, intenta de nuevo")
             }
         }
     }
 
-    fun crearBicicletaAMarca() {
-        val marcaId = console.obtenerTexto("Ingresa el ID de la marca: ").toIntOrNull()
+    fun crearBicicletaDeMarca() {
+        val marcaId = view.obtenerTexto("Ingresa el ID de la marca: ").toIntOrNull()
         if (marcaId != null) {
             agregarBicicleta(marcaId)
         } else {
-            println("ID de marca inválido")
+            println("ID de marca incorrecto")
         }
     }
 
@@ -102,10 +101,10 @@ class Crud(
         if (marca != null) {
             val bicicleta = Bicicleta(
                 id = generarNuevoIdBicicleta(),
-                modelo = console.obtenerTexto("Ingresa el modelo de la bicicleta: "),
-                tipo = console.obtenerTexto("Tipo: "),
-                anio = console.obtenerInt("Año: "),
-                precio = console.obtenerDouble("Precio: "),
+                modelo = view.obtenerTexto("Ingresa el modelo de la bicicleta: "),
+                tipo = view.obtenerTexto("Tipo: "),
+                anio = view.obtenerInt("Año: "),
+                precio = view.obtenerDouble("Precio: "),
                 marcaId = marcaId
             )
             marca.bicicletas.add(bicicleta)
@@ -116,7 +115,7 @@ class Crud(
         }
     }
 
-    fun listarBicicletas() {
+    fun mostrarBicicletas() {
         val bicicletas = obtenerListaBicicletas()
         for (bicicleta in bicicletas) {
             println(bicicleta)
@@ -124,9 +123,9 @@ class Crud(
     }
 
     fun actualizarBicicleta() {
-        listarMarcas()
+        mostrarMarcas()
         val idMarca =
-            console.obtenerInt("\nIngresa el ID de la marca donde se encuentra la bicicleta a actualizar: ")
+            view.obtenerInt("\nIngresa el ID de la marca donde se encuentra la bicicleta a actualizar: ")
         val marca = obtenerMarcaPorId(idMarca)
 
         if (marca != null) {
@@ -139,15 +138,15 @@ class Crud(
 
             if (marca.bicicletas.isNotEmpty()) {
 
-                val idBicicleta = console.obtenerInt("\nIngresa el ID de la bicicleta a actualizar: ")
+                val idBicicleta = view.obtenerInt("\nIngresa el ID de la bicicleta a actualizar: ")
                 val bicicleta = obtenerBicicletaPorId(idBicicleta)
 
                 if (bicicleta != null) {
                     println("Ingresa los nuevos datos de la bici:")
-                    val nuevoModelo = console.obtenerTexto("Nuevo modelo de la bicicleta: ")
-                    val nuevoTipo = console.obtenerTexto("Nuevo tipo: ")
-                    val nuevoAnio = console.obtenerInt("Nuevo año: ")
-                    val nuevoPrecio = console.obtenerDouble("Nuevo precio: ")
+                    val nuevoModelo = view.obtenerTexto("Nuevo modelo de la bicicleta: ")
+                    val nuevoTipo = view.obtenerTexto("Nuevo tipo: ")
+                    val nuevoAnio = view.obtenerInt("Nuevo año: ")
+                    val nuevoPrecio = view.obtenerDouble("Nuevo precio: ")
 
                     bicicleta.modelo = nuevoModelo
                     bicicleta.tipo = nuevoTipo
@@ -168,16 +167,15 @@ class Crud(
         }
     }
 
-
     fun eliminarBicicleta() {
         val idMarca =
-            console.obtenerInt("Ingresa el ID de la marca donde se encuentra la bicicleta a eliminar: ")
+            view.obtenerInt("Ingresa el ID de la marca donde se encuentra la bicicleta a eliminar: ")
         val marca: Marca? = obtenerMarcaPorId(idMarca)
 
         println("Las bicicletas disponibles para eliminar son las siguientes:")
         println(marca?.bicicletas)
 
-        val idBicicleta = console.obtenerInt("Ingresa el ID de la bicicleta a eliminar: ")
+        val idBicicleta = view.obtenerInt("Ingresa el ID de la bicicleta a eliminar: ")
         val bicicleta: Bicicleta? = obtenerBicicletaPorId(idBicicleta)
 
         marca?.bicicletas?.remove(bicicleta)
@@ -193,7 +191,6 @@ class Crud(
         val platillos = obtenerListaBicicletas()
         return if (platillos.isEmpty()) 1 else platillos.maxByOrNull { it.id }!!.id + 1
     }
-
 
     private fun obtenerListaBicicletas(): MutableList<Bicicleta> {
         val bicicletas = mutableListOf<Bicicleta>()

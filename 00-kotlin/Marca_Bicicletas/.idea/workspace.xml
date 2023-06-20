@@ -6,9 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="8fd09b35-0d4f-4dc7-a4b6-42a1c80d618f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marcas.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/controlador/Crud.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/controlador/Crud.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/vista/Console.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/vista/Console.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/controlador/Crud.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/controlador/Controller.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/vista/Console.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/vista/View.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +46,9 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
     "settings.editor.selected.configurable": "proofread",
     "vue.rearranger.settings.migration": "true"
   }
@@ -80,7 +83,7 @@
       <option name="presentableId" value="Default" />
       <updated>1687230235469</updated>
       <workItem from="1687230236619" duration="3999000" />
-      <workItem from="1687234347759" duration="2311000" />
+      <workItem from="1687234347759" duration="3862000" />
     </task>
     <servers />
   </component>

@@ -1,15 +1,15 @@
 package vista
 
-import controlador.Crud
+import controlador.Controller
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 import java.util.*
 
-class Console(private val crud: Crud) {
+class View(private val controller: Controller) {
 
     private val scanner = Scanner(System.`in`)
 
-    fun mostrarMenuPrincipal() {
+    fun mostrarMenu() {
         var opc: Int
         val menu: String = "-------Deber 01 Móviles-------" +
                 "\n1. Menú de Marca" +
@@ -24,8 +24,8 @@ class Console(private val crud: Crud) {
             scanner.nextLine()
 
             when (opc) {
-                1 -> mostrarOpcionesMarca()
-                2 -> mostrarOpcionesBicicleta()
+                1 -> mostrarMenuMarca()
+                2 -> mostrarMenuBicicleta()
                 3 -> break
 
                 else -> println("Opción inválida")
@@ -34,9 +34,9 @@ class Console(private val crud: Crud) {
         } while (opc != 3)
     }
 
-    private fun mostrarOpcionesMarca() {
+    private fun mostrarMenuMarca() {
         var opc: Int
-        val menu: String = "-------------MARCAS-------------" +
+        val menu: String = "-----------MARCAS-----------" +
                 "\n1. Agregar marca" +
                 "\n2. Listar marcas" +
                 "\n3. Actualizar marca" +
@@ -51,21 +51,21 @@ class Console(private val crud: Crud) {
             scanner.nextLine()
 
             when (opc) {
-                1 -> crud.agregarMarca()
-                2 -> crud.listarMarcas()
-                3 -> crud.actualizarMarca()
-                4 -> crud.eliminarMarca()
-                5 -> mostrarMenuPrincipal()
+                1 -> controller.agregarMarca()
+                2 -> controller.mostrarMarcas()
+                3 -> controller.actualizarMarca()
+                4 -> controller.eliminarMarca()
+                5 -> mostrarMenu()
 
-                else -> println("Opción inválida")
+                else -> println("Opción incorrecta")
             }
             println()
         } while (opc != 5)
     }
 
-    private fun mostrarOpcionesBicicleta() {
+    private fun mostrarMenuBicicleta() {
         var opc: Int
-        val menu: String = "-------------BICICLETAS-------------" +
+        val menu: String = "-----------BICICLETAS-----------" +
                 "\n1. Agregar bicicleta de una marca" +
                 "\n2. Mostrar bicicletas" +
                 "\n3. Actualizar bicicleta" +
@@ -80,12 +80,15 @@ class Console(private val crud: Crud) {
             scanner.nextLine()
 
             when (opc) {
-                1 -> crud.crearBicicletaAMarca()
-                2 -> crud.listarBicicletas()
-                3 -> crud.actualizarBicicleta()
-                4 -> crud.eliminarBicicleta()
-                5 -> mostrarMenuPrincipal()
-                else -> println("Opción inválida")
+                1 -> {
+                    controller.mostrarMarcas()
+                    controller.crearBicicletaDeMarca()
+                }
+                2 -> controller.mostrarBicicletas()
+                3 -> controller.actualizarBicicleta()
+                4 -> controller.eliminarBicicleta()
+                5 -> mostrarMenu()
+                else -> println("Opción incorrecta")
             }
             println()
         } while (opc != 5)
@@ -99,7 +102,7 @@ class Console(private val crud: Crud) {
                 val formatter = DateTimeFormatter.ISO_LOCAL_DATE
                 return LocalDate.parse(input, formatter)
             } catch (e: Exception) {
-                print("Entrada inválida, intenta de nuevo")
+                print("Entrada incorrecta, intenta de nuevo")
             }
         }
     }
@@ -116,7 +119,7 @@ class Console(private val crud: Crud) {
             try {
                 return input?.toInt() ?: 0
             } catch (e: NumberFormatException) {
-                println("Entrada inválida, intenta de nuevo")
+                println("Entrada incorrecta, intenta de nuevo")
             }
         }
     }
@@ -128,7 +131,7 @@ class Console(private val crud: Crud) {
             try {
                 return input?.toDouble() ?: 0.0
             } catch (e: NumberFormatException) {
-                println("Entrada inválida, intenta de nuevo")
+                println("Entrada incorrecta, intenta de nuevo")
             }
         }
     }
