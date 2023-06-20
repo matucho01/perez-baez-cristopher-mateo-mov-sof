@@ -2,8 +2,8 @@ package controlador
 
 import Console
 import com.google.gson.Gson
-import entidades.Bicicleta
-import entidades.Marca
+import modelo.Bicicleta
+import modelo.Marca
 import java.io.File
 
 class Crud(private val gson: Gson) {
@@ -213,7 +213,7 @@ class Crud(private val gson: Gson) {
         val file = File("marcas.json")
         file.writeText(json)
     }
-    
+
     private fun obtenerMarcaPorId(id: Int): Marca? {
         return marcas.find { it.id == id }
     }

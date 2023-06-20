@@ -1,6 +1,4 @@
-package entidades
-
-import java.time.LocalDate
+package modelo
 
 data class Marca(
     var id: Int,

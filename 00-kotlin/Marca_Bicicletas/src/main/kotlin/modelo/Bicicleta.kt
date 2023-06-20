@@ -1,4 +1,4 @@
-package entidades
+package modelo
 
 data class Bicicleta(
     var id: Int,
