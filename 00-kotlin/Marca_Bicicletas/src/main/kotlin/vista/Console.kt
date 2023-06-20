@@ -6,17 +6,19 @@ import java.time.format.DateTimeFormatter
 import java.util.*
 
 class Console(private val crud: Crud) {
-    //val gson = Gson()
+
     private val scanner = Scanner(System.`in`)
 
     fun mostrarMenuPrincipal() {
         var opc: Int
+        val menu: String = "-------Deber 01 Móviles-------" +
+                "\n1. Menú de Marca" +
+                "\n2. Menú de Bicicleta" +
+                "\n3. Salir" +
+                "\nEscoge una opción: "
+
         do {
-            println("-------Deber 01 Móviles-------")
-            println("1. Menú de Marca")
-            println("2. Menú de Bicicleta")
-            println("3. Salir")
-            print("Elige la opción: ")
+            print(menu)
 
             opc = scanner.nextInt()
             scanner.nextLine()
@@ -34,14 +36,16 @@ class Console(private val crud: Crud) {
 
     private fun mostrarOpcionesMarca() {
         var opc: Int
+        val menu: String = "-------------MARCAS-------------" +
+                "\n1. Agregar marca" +
+                "\n2. Listar marcas" +
+                "\n3. Actualizar marca" +
+                "\n4. Eliminar marca" +
+                "\n5. Regresar al menú" +
+                "\nEscoge una opción: "
+
         do {
-            println("---------------MARCAS---------------")
-            println("1. Agregar marca")
-            println("2. Listar marcas")
-            println("3. Actualizar marca")
-            println("4. Eliminar marca")
-            println("5. Regresar al menú principal")
-            print("Escoge una opción: ")
+            print(menu)
 
             opc = scanner.nextInt()
             scanner.nextLine()
@@ -61,14 +65,16 @@ class Console(private val crud: Crud) {
 
     private fun mostrarOpcionesBicicleta() {
         var opc: Int
+        val menu: String = "-------------BICICLETAS-------------" +
+                "\n1. Agregar bicicleta de una marca" +
+                "\n2. Mostrar bicicletas" +
+                "\n3. Actualizar bicicleta" +
+                "\n4. Eliminar bicicleta" +
+                "\n5. Regresar al menú" +
+                "\nEscoge una opción: "
+
         do {
-            println("---------------BICICLETAS---------------")
-            println("1. Agregar bicicleta de una marca")
-            println("2. Mostrar bicicletas")
-            println("3. Actualizar bicicleta")
-            println("4. Eliminar bicicleta")
-            println("5. Regresar al menú principal")
-            print("Escoge una opción: ")
+            print(menu)
 
             opc = scanner.nextInt()
             scanner.nextLine()
@@ -83,6 +89,19 @@ class Console(private val crud: Crud) {
             }
             println()
         } while (opc != 5)
+    }
+
+    fun obtenerFecha(mensaje: String): LocalDate {
+        while (true) {
+            print(mensaje)
+            val input = readLine()
+            try {
+                val formatter = DateTimeFormatter.ISO_LOCAL_DATE
+                return LocalDate.parse(input, formatter)
+            } catch (e: Exception) {
+                print("Entrada inválida, intenta de nuevo")
+            }
+        }
     }
 
     fun obtenerTexto(mensaje: String): String {
@@ -114,17 +133,4 @@ class Console(private val crud: Crud) {
         }
     }
 
-    fun obtenerFecha(mensaje: String): LocalDate {
-        while (true) {
-            print(mensaje)
-            val input = readLine()
-            try {
-                val formatter = DateTimeFormatter.ISO_LOCAL_DATE
-                return LocalDate.parse(input, formatter)
-            } catch (e: Exception) {
-                print("Entrada inválida, intenta de nuevo")
-            }
-        }
-    }
-    
 }

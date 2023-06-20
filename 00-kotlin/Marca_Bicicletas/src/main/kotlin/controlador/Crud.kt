@@ -6,7 +6,9 @@ import modelo.Bicicleta
 import modelo.Marca
 import java.io.File
 
-class Crud(private val gson: Gson) {
+class Crud(
+    private val gson: Gson
+) {
     private val marcas: MutableList<Marca> = mutableListOf()
     private val console: Console = Console(this)
 
