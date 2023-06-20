@@ -1,4 +1,5 @@
-import com.google.gson.Gson
+package vista
+
 import controlador.Crud
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
@@ -125,6 +126,5 @@ class Console(private val crud: Crud) {
             }
         }
     }
-
-
+    
 }

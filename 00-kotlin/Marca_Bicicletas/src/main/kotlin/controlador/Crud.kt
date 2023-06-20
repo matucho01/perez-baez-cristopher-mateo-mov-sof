@@ -1,6 +1,6 @@
 package controlador
 
-import Console
+import vista.Console
 import com.google.gson.Gson
 import modelo.Bicicleta
 import modelo.Marca
