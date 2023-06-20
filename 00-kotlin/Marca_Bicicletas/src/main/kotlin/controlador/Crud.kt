@@ -20,6 +20,7 @@ class Crud(private val gson: Gson) {
             nombre = console.obtenerTexto("Ingrese el nombre de la marca: "),
             pais = console.obtenerTexto("País de origen: "),
             //fechaCreacion = console.obtenerFecha("Fecha de creación (YYYY-MM-DD): "),
+            fechaCreacion = console.obtenerTexto("Fecha de creación (YYYY-MM-DD): "),
             sede = console.obtenerTexto("Sede: ")
         )
         marcas.add(marca)
@@ -51,11 +52,12 @@ class Crud(private val gson: Gson) {
             val nuevoNombre = console.obtenerTexto("Nuevo nombre de la marca: ")
             val nuevoPais = console.obtenerTexto("Nuevo país: ")
             //val nuevaFechaCreacion = console.obtenerFecha("Nueva fecha de creación (YYYY-MM-DD): ")
+            val nuevaFechaCreacion = console.obtenerTexto("Nueva fecha de creación (YYYY-MM-DD): ")
             val nuevaSede = console.obtenerTexto("Nueva sede: ")
 
             marca.nombre = nuevoNombre
             marca.pais = nuevoPais
-            //marca.fechaCreacion = nuevaFechaCreacion
+            marca.fechaCreacion = nuevaFechaCreacion
             marca.sede = nuevaSede
 
             guardarDatos()
@@ -195,8 +197,8 @@ class Crud(private val gson: Gson) {
         val bicicletas = mutableListOf<Bicicleta>()
         if (marcas.isNotEmpty()) {
             for (marca in marcas) {
-                for (platillo in marca.bicicletas) {
-                    bicicletas.add(platillo)
+                for (bicicleta in marca.bicicletas) {
+                    bicicletas.add(bicicleta)
                 }
             }
         } else {
@@ -206,14 +208,12 @@ class Crud(private val gson: Gson) {
         return bicicletas
     }
 
-
     private fun guardarDatos() {
         val json = gson.toJson(marcas)
         val file = File("marcas.json")
         file.writeText(json)
     }
-
-
+    
     private fun obtenerMarcaPorId(id: Int): Marca? {
         return marcas.find { it.id == id }
     }

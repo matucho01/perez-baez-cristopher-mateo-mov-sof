@@ -5,7 +5,7 @@ fun main(args: Array<String>) {
 
     val gson = Gson()
     val crud = Crud(gson)
-    val console : Console = Console(crud)
+    val console = Console(crud)
 
     console.mostrarMenuPrincipal()
 }

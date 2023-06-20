@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8fd09b35-0d4f-4dc7-a4b6-42a1c80d618f" name="Changes" comment="" />
+    <list default="true" id="8fd09b35-0d4f-4dc7-a4b6-42a1c80d618f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/controlador/Crud.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/controlador/Crud.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/entidades/Marca.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/entidades/Marca.kt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,6 +27,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
   <component name="ProjectId" id="2RS4dFEaI98ov3iBoLerWhm6t3R" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -32,6 +40,8 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/mate_/Documents/GitHub/perez-baez-cristopher-mateo-mov-sof/00-kotlin/Marca_Bicicletas",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -69,6 +79,7 @@
       <option name="presentableId" value="Default" />
       <updated>1687230235469</updated>
       <workItem from="1687230236619" duration="3999000" />
+      <workItem from="1687234347759" duration="846000" />
     </task>
     <servers />
   </component>
