@@ -60,7 +60,7 @@ class MainActivity : AppCompatActivity() {
         // (aceptamos primitivas)
         intentExplicito.putExtra("nombre", "Mateo")
         intentExplicito.putExtra("apellido", "Perez")
-        intentExplicito.putExtra("edad", "22")
+        intentExplicito.putExtra("edad", 22)
         // enviamos el intent con RESPUESTA
         // RECIBIMOS RESPUESTA
         callbackContenidoIntentExplicito
