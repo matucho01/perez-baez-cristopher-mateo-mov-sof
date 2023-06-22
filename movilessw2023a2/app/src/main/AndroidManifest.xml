@@ -13,6 +13,11 @@
         android:theme="@style/Theme.Movilessw2023a"
         tools:targetApi="31">
         <activity
+            android:name=".CIntentExplicitoParametros"
+            android:exported="false"
+            android:label="@string/title_activity_cintent_explicito_parametros"
+            android:theme="@style/Theme.Movilessw2023a" />
+        <activity
             android:name=".BListView"
             android:exported="false" />
         <activity

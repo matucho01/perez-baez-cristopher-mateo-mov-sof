@@ -39,7 +39,7 @@ class BListView : AppCompatActivity() {
     override fun onContextItemSelected(item: MenuItem): Boolean {
         return when(item.itemId){
             R.id.mi_editar -> {
-                "hacer algo con: ${idItemSeleccionado}"
+                "Hacer algo con: ${idItemSeleccionado}"
                 return true
             }
             R.id.mi_eliminar -> {
