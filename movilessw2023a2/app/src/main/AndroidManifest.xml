@@ -13,14 +13,19 @@
         android:theme="@style/Theme.Movilessw2023a"
         tools:targetApi="31">
         <activity
+            android:name=".ECrudEntrenador"
+            android:exported="false" />
+        <activity
             android:name=".CIntentExplicitoParametros"
             android:exported="false"
             android:label="@string/title_activity_cintent_explicito_parametros"
-            android:theme="@style/Theme.Movilessw2023a" >
+            android:theme="@style/Theme.Movilessw2023a">
             <intent-filter>
-                <action android:name="android.intent.action.SEND"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-                <data android:mimeType="text/plain"/>
+                <action android:name="android.intent.action.SEND" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="text/plain" />
             </intent-filter>
         </activity>
         <activity
