@@ -2,23 +2,26 @@ package com.example.examenmovilesib
 
 class MarcaDAO():DAO<Marca>() {
     override fun delete(id: Int): Boolean {
-        TODO("Not yet implemented")
+        return BDDMemoria.listaMarcas.removeIf { it.getId() == id }
     }
 
     override fun get(id: Int): Marca? {
-        TODO("Not yet implemented")
+        return BDDMemoria.listaMarcas.firstOrNull { marca: Marca -> marca.getId() == id }
     }
 
     override fun getLista(): List<Marca> {
-        TODO("Not yet implemented")
+        return BDDMemoria.listaMarcas
     }
 
     override fun edit(t: Marca) {
-        TODO("Not yet implemented")
+        val indice = BDDMemoria.listaMarcas.indexOfFirst { it.getId() == t.getId() }
+        BDDMemoria.listaMarcas.set(indice,t)
     }
 
     override fun add(t: Marca) {
-        TODO("Not yet implemented")
+        val idFinal = BDDMemoria.listaMarcas.last().getId()
+        t.setId(idFinal + 1);
+        BDDMemoria.listaMarcas.add(t)
     }
 
 }

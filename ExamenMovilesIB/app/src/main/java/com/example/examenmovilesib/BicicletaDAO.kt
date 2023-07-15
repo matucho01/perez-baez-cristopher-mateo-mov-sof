@@ -2,22 +2,25 @@ package com.example.examenmovilesib
 
 class BicicletaDAO():DAO<Bicicleta>() {
     override fun delete(id: Int): Boolean {
-        TODO("Not yet implemented")
+        return BDDMemoria.listaBicicletas.removeIf { it.getId() == id }
     }
 
     override fun get(id: Int): Bicicleta? {
-        TODO("Not yet implemented")
+        return BDDMemoria.listaBicicletas.firstOrNull { bicicleta: Bicicleta -> bicicleta.getId() == id }
     }
 
     override fun getLista(): List<Bicicleta> {
-        TODO("Not yet implemented")
+        return BDDMemoria.listaBicicletas
     }
 
     override fun edit(t: Bicicleta) {
-        TODO("Not yet implemented")
+        val indice = BDDMemoria.listaBicicletas.indexOfFirst { it.getId() == t.getId() }
+        BDDMemoria.listaBicicletas.set(indice,t)
     }
 
     override fun add(t: Bicicleta) {
-        TODO("Not yet implemented")
+        val idFinal = BDDMemoria.listaBicicletas.last().getId()
+        t.setId(idFinal + 1);
+        BDDMemoria.listaBicicletas.add(t)
     }
 }
