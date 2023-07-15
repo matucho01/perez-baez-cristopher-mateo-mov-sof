@@ -18,9 +18,9 @@ import com.example.examenmovilesib.modelo.Bicicleta
 
 class Bicicletas : AppCompatActivity() {
 
-    val bicicletaDao = BicicletaDAO()
-    lateinit var adaptador: ArrayAdapter<Bicicleta>
-    var idItemSeleccionado = 0
+    private val bicicletaDao = BicicletaDAO()
+    private lateinit var adaptador: ArrayAdapter<Bicicleta>
+    private var idItemSeleccionado = 0
     var id: Int? = -1
 
     val callback = registerForActivityResult(
@@ -66,11 +66,11 @@ class Bicicletas : AppCompatActivity() {
         idItemSeleccionado = id
     }
 
-    fun abrirDialogoEliminar() {
+    private fun abrirDialogoEliminar() {
         val builder = AlertDialog.Builder(this)
         builder.setTitle("¿Quieres eliminar la bicicleta?")
         builder.setPositiveButton("Eliminar") { dialog, which ->
-            val bicicletaEliminada = bicicletaDao.getLista().get(idItemSeleccionado)
+            val bicicletaEliminada = bicicletaDao.getLista()[idItemSeleccionado]
             if (bicicletaDao.delete(bicicletaEliminada.getId())) {
                 adaptador.remove(bicicletaEliminada)
                 adaptador.notifyDataSetChanged()
@@ -112,12 +112,12 @@ class Bicicletas : AppCompatActivity() {
         adaptador.notifyDataSetChanged()
     }
 
-    fun irActividad(clase: Class<*>) {
+    private fun irActividad(clase: Class<*>) {
         val intent = Intent(this, clase)
         startActivity(intent)
     }
 
-    fun abrirActividadConParametros(clase: Class<*>) {
+    private fun abrirActividadConParametros(clase: Class<*>) {
         val intentExplicito = Intent(this, clase)
         intentExplicito.putExtra("id", bicicletaDao.getLista(id!!).get(idItemSeleccionado).getId())
         intentExplicito.putExtra("marcaId", id)

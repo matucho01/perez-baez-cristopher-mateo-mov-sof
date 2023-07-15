@@ -18,11 +18,11 @@ import com.example.examenmovilesib.modelo.Marca
 
 class MainActivity : AppCompatActivity() {
 
-    val marcaDao = MarcaDAO()
-    lateinit var adaptador: ArrayAdapter<Marca>
-    var idItemSeleccionado = 0
+    private val marcaDao = MarcaDAO()
+    private lateinit var adaptador: ArrayAdapter<Marca>
+    private var idItemSeleccionado = 0
 
-    val callback=  registerForActivityResult(
+    private val callback=  registerForActivityResult(
         ActivityResultContracts.StartActivityForResult()
     ){
             result ->
@@ -96,32 +96,32 @@ class MainActivity : AppCompatActivity() {
         adaptador.notifyDataSetChanged()
     }
 
-    fun abrirDialogoEliminar() {
+    private fun abrirDialogoEliminar() {
         val builder = AlertDialog.Builder(this)
-        builder.setTitle("Esta seguro que desea eliminar el autor?")
-        builder.setPositiveButton("Si") { dialog, which ->
-            if(marcaDao.delete(marcaDao.getLista().get(idItemSeleccionado).getId())){
+        builder.setTitle("¿Quieres eliminar la marca?")
+        builder.setPositiveButton("Aceptar") { dialog, which ->
+            if(marcaDao.delete(marcaDao.getLista()[idItemSeleccionado].getId())){
                 adaptador.notifyDataSetChanged()
             }
         }
-        builder.setNegativeButton("No", null)
+        builder.setNegativeButton("Cancelar", null)
 
         val dialog = builder.create()
         dialog.show()
     }
 
-    fun irActividad(
+    private fun irActividad(
         clase: Class<*>
     ){
         val intent = Intent(this, clase)
         startActivity(intent)
     }
 
-    fun abrirActividadConParametros(
+    private fun abrirActividadConParametros(
         clase: Class<*>
     ){
         val intentExplicito = Intent(this, clase)
-        intentExplicito.putExtra("id", marcaDao.getLista().get(idItemSeleccionado).getId())
+        intentExplicito.putExtra("id", marcaDao.getLista()[idItemSeleccionado].getId())
         callback.launch(intentExplicito)
     }
 }
