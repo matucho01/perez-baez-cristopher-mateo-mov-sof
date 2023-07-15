@@ -7,8 +7,8 @@ import java.time.format.DateTimeFormatter
 
 class BDDMemoria {
     companion object{
-        val listaMarcas= arrayListOf<Marca>()
-        val listaBicicletas= arrayListOf<Bicicleta>()
+        val listaMarcas = arrayListOf<Marca>()
+        val listaBicicletas = arrayListOf<Bicicleta>()
 
         init {
             val formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy")

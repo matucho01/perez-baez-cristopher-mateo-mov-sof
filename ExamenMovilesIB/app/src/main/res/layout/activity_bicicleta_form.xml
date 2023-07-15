@@ -74,25 +74,24 @@
         android:id="@+id/cb_disponible"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="36dp"
         android:text="Disponible"
         app:layout_constraintEnd_toEndOf="@+id/input_precio"
-        app:layout_constraintHorizontal_bias="0.532"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="@+id/input_precio"
         app:layout_constraintTop_toBottomOf="@+id/input_precio" />
 
     <Button
         android:id="@+id/btn_aceptar_bicicleta"
-        android:layout_width="104dp"
+        android:layout_width="106dp"
         android:layout_height="53dp"
-        android:layout_marginBottom="48dp"
-        android:text="Crear"
+        android:text="Aceptar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.263"
+        app:layout_constraintHorizontal_bias="0.291"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/input_marca"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.421" />
 
     <Button
         android:id="@+id/btn_cancelar_bicicleta"
@@ -110,12 +109,12 @@
         android:id="@+id/input_marca"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="20dp"
         android:ems="10"
         android:hint="Marca"
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="@+id/cb_disponible"
-        app:layout_constraintHorizontal_bias="0.532"
+        app:layout_constraintHorizontal_bias="0.605"
         app:layout_constraintStart_toStartOf="@+id/cb_disponible"
         app:layout_constraintTop_toBottomOf="@+id/cb_disponible" />
 </androidx.constraintlayout.widget.ConstraintLayout>

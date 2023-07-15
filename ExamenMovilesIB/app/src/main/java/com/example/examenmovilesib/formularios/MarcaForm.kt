@@ -17,7 +17,7 @@ import java.time.format.DateTimeFormatter
 
 class MarcaForm : AppCompatActivity() {
 
-    val marcaDao = MarcaDAO()
+    private val marcaDao = MarcaDAO()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

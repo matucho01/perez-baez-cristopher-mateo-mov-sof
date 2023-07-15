@@ -21,7 +21,7 @@ class BicicletaForm : AppCompatActivity() {
     var id: Int? =null
     private var marcaId: Int? =null
 
-    val callback = registerForActivityResult(
+    private val callback = registerForActivityResult(
         ActivityResultContracts.StartActivityForResult()
     ) {
             result ->
