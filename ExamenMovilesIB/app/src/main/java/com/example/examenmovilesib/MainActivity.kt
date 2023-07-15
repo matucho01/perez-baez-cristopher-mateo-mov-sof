@@ -12,6 +12,8 @@ import android.widget.Button
 import android.widget.ListView
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
+import com.example.examenmovilesib.dao.MarcaDAO
+import com.example.examenmovilesib.modelo.Marca
 
 class MainActivity : AppCompatActivity() {
 

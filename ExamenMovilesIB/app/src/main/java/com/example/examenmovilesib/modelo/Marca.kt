@@ -1,4 +1,4 @@
-package com.example.examenmovilesib
+package com.example.examenmovilesib.modelo
 
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter

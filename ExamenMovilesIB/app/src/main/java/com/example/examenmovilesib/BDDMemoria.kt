@@ -1,5 +1,7 @@
 package com.example.examenmovilesib
 
+import com.example.examenmovilesib.modelo.Bicicleta
+import com.example.examenmovilesib.modelo.Marca
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 

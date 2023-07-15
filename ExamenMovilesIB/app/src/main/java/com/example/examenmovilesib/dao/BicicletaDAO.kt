@@ -1,6 +1,9 @@
-package com.example.examenmovilesib
+package com.example.examenmovilesib.dao
 
-class BicicletaDAO():DAO<Bicicleta>() {
+import com.example.examenmovilesib.BDDMemoria
+import com.example.examenmovilesib.modelo.Bicicleta
+
+class BicicletaDAO(): DAO<Bicicleta>() {
     override fun delete(id: Int): Boolean {
         return BDDMemoria.listaBicicletas.removeIf { it.getId() == id }
     }
@@ -11,6 +14,10 @@ class BicicletaDAO():DAO<Bicicleta>() {
 
     override fun getLista(): List<Bicicleta> {
         return BDDMemoria.listaBicicletas
+    }
+
+    fun getLista(marcaId: Int): List<Bicicleta> {
+        return BDDMemoria.listaBicicletas.filter { it.getMarcaId() == marcaId }
     }
 
     override fun edit(t: Bicicleta) {

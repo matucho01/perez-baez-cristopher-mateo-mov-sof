@@ -1,4 +1,4 @@
-package com.example.examenmovilesib
+package com.example.examenmovilesib.modelo
 
 class Bicicleta {
     private var id: Int = 0

@@ -1,4 +1,4 @@
-package com.example.examenmovilesib
+package com.example.examenmovilesib.dao
 
 abstract class DAO<T> {
     abstract fun delete(id: Int): Boolean

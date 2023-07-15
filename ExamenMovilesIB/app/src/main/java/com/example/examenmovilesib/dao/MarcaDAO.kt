@@ -1,6 +1,9 @@
-package com.example.examenmovilesib
+package com.example.examenmovilesib.dao
 
-class MarcaDAO():DAO<Marca>() {
+import com.example.examenmovilesib.BDDMemoria
+import com.example.examenmovilesib.modelo.Marca
+
+class MarcaDAO(): DAO<Marca>() {
     override fun delete(id: Int): Boolean {
         return BDDMemoria.listaMarcas.removeIf { it.getId() == id }
     }
