@@ -13,6 +13,7 @@ import android.widget.ListView
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import com.example.examenmovilesib.dao.MarcaDAO
+import com.example.examenmovilesib.formularios.MarcaForm
 import com.example.examenmovilesib.modelo.Marca
 
 class MainActivity : AppCompatActivity() {
@@ -20,6 +21,7 @@ class MainActivity : AppCompatActivity() {
     val marcaDao = MarcaDAO()
     lateinit var adaptador: ArrayAdapter<Marca>
     var idItemSeleccionado = 0
+
     val callback=  registerForActivityResult(
         ActivityResultContracts.StartActivityForResult()
     ){
@@ -73,7 +75,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             R.id.mi_ver_marcas -> {
-                abrirActividadConParametros(Marcas::class.java)
+                abrirActividadConParametros(Bicicletas::class.java)
                 true
             }
 

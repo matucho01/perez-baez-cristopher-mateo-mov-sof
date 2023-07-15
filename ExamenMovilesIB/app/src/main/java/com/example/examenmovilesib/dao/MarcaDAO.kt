@@ -27,4 +27,7 @@ class MarcaDAO(): DAO<Marca>() {
         BDDMemoria.listaMarcas.add(t)
     }
 
+    fun existe(id: Int):Boolean{
+        return BDDMemoria.listaMarcas.any { it.getId()==id }
+    }
 }

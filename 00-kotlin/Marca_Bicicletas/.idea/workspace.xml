@@ -5,7 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8fd09b35-0d4f-4dc7-a4b6-42a1c80d618f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../ExamenMovilesIB/app/src/main/java/com/example/examenmovilesib/Marca.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../ExamenMovilesIB/app/src/main/java/com/example/examenmovilesib/Marca.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ExamenMovilesIB/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../ExamenMovilesIB/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ExamenMovilesIB/app/src/main/java/com/example/examenmovilesib/BDDMemoria.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../ExamenMovilesIB/app/src/main/java/com/example/examenmovilesib/BDDMemoria.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ExamenMovilesIB/app/src/main/java/com/example/examenmovilesib/BicicletaForm.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../ExamenMovilesIB/app/src/main/java/com/example/examenmovilesib/formularios/BicicletaForm.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ExamenMovilesIB/app/src/main/java/com/example/examenmovilesib/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../ExamenMovilesIB/app/src/main/java/com/example/examenmovilesib/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ExamenMovilesIB/app/src/main/java/com/example/examenmovilesib/MarcaForm.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../ExamenMovilesIB/app/src/main/java/com/example/examenmovilesib/formularios/MarcaForm.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ExamenMovilesIB/app/src/main/java/com/example/examenmovilesib/Marcas.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../ExamenMovilesIB/app/src/main/java/com/example/examenmovilesib/Marcas.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ExamenMovilesIB/app/src/main/java/com/example/examenmovilesib/modelo/Bicicleta.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../ExamenMovilesIB/app/src/main/java/com/example/examenmovilesib/modelo/Bicicleta.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ExamenMovilesIB/app/src/main/res/layout/activity_bicicleta_form.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../ExamenMovilesIB/app/src/main/res/layout/activity_bicicleta_form.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ExamenMovilesIB/app/src/main/res/layout/activity_marca_form.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../ExamenMovilesIB/app/src/main/res/layout/activity_marca_form.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +92,7 @@
       <workItem from="1687266261289" duration="5000" />
       <workItem from="1688087507326" duration="69000" />
       <workItem from="1689029084056" duration="1834000" />
-      <workItem from="1689379444890" duration="1113000" />
+      <workItem from="1689379444890" duration="1718000" />
     </task>
     <servers />
   </component>

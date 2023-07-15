@@ -13,18 +13,20 @@ import android.widget.ListView
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import com.example.examenmovilesib.dao.BicicletaDAO
+import com.example.examenmovilesib.formularios.BicicletaForm
 import com.example.examenmovilesib.modelo.Bicicleta
 
-class Marcas : AppCompatActivity() {
+class Bicicletas : AppCompatActivity() {
 
     val bicicletaDao = BicicletaDAO()
     lateinit var adaptador: ArrayAdapter<Bicicleta>
     var idItemSeleccionado = 0
-
     var id: Int? = -1
+
     val callback = registerForActivityResult(
         ActivityResultContracts.StartActivityForResult()
-    ) { result ->
+    ) {
+            result ->
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -9,12 +9,13 @@ class Bicicleta {
     private var disponible: Boolean = false
     private var marcaId: Int = 0
 
-    constructor(id: Int, modelo: String, tipo: String, anio: Int, precio: Double, marcaId: Int) {
+    constructor(id: Int, modelo: String, tipo: String, anio: Int, precio: Double, disponible: Boolean, marcaId: Int) {
         this.id = id
         this.modelo = modelo
         this.tipo = tipo
         this.anio = anio
         this.precio = precio
+        this.disponible = disponible
         this.marcaId = marcaId
     }
 
