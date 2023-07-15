@@ -6,11 +6,9 @@ import java.time.format.DateTimeFormatter
 class Marca {
     private var id: Int = 0
     private var nombre: String = ""
-    var pais: String = ""
+    private var pais: String = ""
     private var fechaCreacion: LocalDate? = null
     private var sede: String = ""
-
-    //var bicicletas: MutableList<Bicicleta> = mutableListOf()
 
     constructor(id: Int, nombre: String, pais: String, fechaCreacion: LocalDate, sede: String) {
         this.id = id

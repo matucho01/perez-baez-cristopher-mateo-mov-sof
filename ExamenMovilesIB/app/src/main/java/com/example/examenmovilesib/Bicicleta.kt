@@ -1,13 +1,13 @@
 package com.example.examenmovilesib
 
 class Bicicleta {
-    var id: Int = 0
-    var modelo: String = ""
-    var tipo: String = ""
-    var anio: Int = 0
-    var precio: Double = 0.00
-    var disponible: Boolean = false
-    var marcaId: Int = 0
+    private var id: Int = 0
+    private var modelo: String = ""
+    private var tipo: String = ""
+    private var anio: Int = 0
+    private var precio: Double = 0.00
+    private var disponible: Boolean = false
+    private var marcaId: Int = 0
 
     constructor(id: Int, modelo: String, tipo: String, anio: Int, precio: Double, marcaId: Int) {
         this.id = id
