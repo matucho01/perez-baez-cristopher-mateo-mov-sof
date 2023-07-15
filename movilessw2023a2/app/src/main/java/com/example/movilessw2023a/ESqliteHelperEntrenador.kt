@@ -13,7 +13,7 @@ class ESqliteHelperEntrenador(
     null,
     1
 ) {
-    override fun onCreate(p0: SQLiteDatabase?) {
+    override fun onCreate(db: SQLiteDatabase?) {
         val scriptSQLCrearTablaEntrenador =
             """
                 CREATE TABLE ENTRENADOR(
@@ -21,6 +21,7 @@ class ESqliteHelperEntrenador(
                 nombre VARCHAR(50),
                 descripcion VARCHAR(50)
             """.trimIndent()
+        db?.execSQL(scriptSQLCrearTablaEntrenador)
     }
 
     override fun onUpgrade(p0: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
@@ -112,4 +113,5 @@ class ESqliteHelperEntrenador(
         baseDatosLectura.close()
         return usuarioEncontrado
     }
+
 }
