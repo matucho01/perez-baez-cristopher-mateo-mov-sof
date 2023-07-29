@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".Mensajes">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/tb_top"
@@ -28,15 +28,41 @@
             android:background="@color/primary"
             android:src="@drawable/account_circle" />
 
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/tb_search"
+            android:layout_width="275dp"
+            android:layout_height="45dp"
+            android:layout_margin="16dp"
+            android:background="@drawable/rounded_toolbar"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0">
+
+            <EditText
+                android:id="@+id/et_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@android:color/transparent"
+                android:ems="10"
+                android:hint="Search Direct Messages"
+                android:inputType="text"
+                android:textSize="14sp" />
+        </androidx.appcompat.widget.Toolbar>
+
         <ImageView
-            android:id="@+id/twitter_logo"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center"
+            android:id="@+id/user"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="0dp"
             android:background="@color/primary"
-            android:src="@drawable/twitter"
-            tools:layout_editor_absoluteX="193dp"
-            tools:layout_editor_absoluteY="27dp" />
+            android:src="@drawable/cog" />
+
     </androidx.appcompat.widget.Toolbar>
 
     <androidx.appcompat.widget.Toolbar
@@ -65,12 +91,12 @@
                 android:gravity="center_horizontal"
                 android:orientation="vertical">
 
-                <ImageView
-                    android:id="@+id/home"
+                <ImageButton
+                    android:id="@+id/btn_home"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@color/primary"
-                    android:src="@drawable/home" />
+                    android:src="@drawable/home_outline" />
 
             </LinearLayout>
 
@@ -133,85 +159,18 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@color/primary"
-                    android:src="@drawable/email_outline" />
+                    android:src="@drawable/email" />
 
             </LinearLayout>
 
 
         </LinearLayout>
-    </androidx.appcompat.widget.Toolbar>
-
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/tb_for_you"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/primary"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        app:layout_constraintBottom_toTopOf="@+id/nestedScrollView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tb_top" >
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:orientation="horizontal">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="50dp"
-                android:gravity="center_horizontal"
-                android:orientation="vertical">
-                <TextView
-                    android:id="@+id/tv_for_you"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="For you"
-                    android:textColor="#080a0c"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    tools:layout_editor_absoluteX="16dp" />
-
-                <ImageButton
-                    android:id="@+id/minus"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@color/primary"
-                    android:src="@drawable/minus" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="50dp"
-                android:gravity="center_horizontal"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/tv_following"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Following"
-                    android:textColor="#5b686e"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    tools:layout_editor_absoluteX="70dp" />
-
-            </LinearLayout>
-
-        </LinearLayout>
-
     </androidx.appcompat.widget.Toolbar>
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/nestedScrollView"
-        android:layout_width="410dp"
-        android:layout_height="527dp"
+        android:layout_width="409dp"
+        android:layout_height="600dp"
         android:fillViewport="true"
         app:layout_constraintBottom_toTopOf="@+id/tb_nav"
         app:layout_constraintEnd_toEndOf="parent"
@@ -225,7 +184,7 @@
             android:orientation="vertical">
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_tweet"
+                android:id="@+id/rv_message"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="0dp"
