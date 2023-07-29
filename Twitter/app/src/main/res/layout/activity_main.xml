@@ -8,8 +8,8 @@
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/tb_top"
-        android:layout_width="410dp"
-        android:layout_height="78dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:background="@color/primary"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
@@ -223,13 +223,11 @@
     <androidx.core.widget.NestedScrollView
         android:id="@+id/nestedScrollView"
         android:layout_width="match_parent"
-        android:layout_height="537dp"
+        android:layout_height="630dp"
         android:fillViewport="true"
         app:layout_constraintBottom_toTopOf="@+id/tb_nav"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tb_top"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
