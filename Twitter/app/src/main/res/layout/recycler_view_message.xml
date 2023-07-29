@@ -1,6 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp">
+
+    <ImageView
+        android:id="@+id/iv_profile_picture"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/circular_image_border"
+        android:scaleType="centerCrop"
+        android:src="@drawable/mateoperez593"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.017"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.652" />
+
+    <TextView
+        android:id="@+id/tv_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Mateo Perez"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_profile_picture"
+        app:layout_constraintStart_toEndOf="@+id/iv_profile_picture"
+        app:layout_constraintTop_toTopOf="@+id/iv_profile_picture"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/iv_star"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_marginStart="5dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/check_decagram"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_username"
+        app:layout_constraintStart_toEndOf="@+id/tv_username"
+        app:layout_constraintTop_toTopOf="@+id/tv_username"
+        app:layout_constraintVertical_bias="0.333" />
+
+    <TextView
+        android:id="@+id/tv_username_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:text="Mateo Perez"
+        android:textColor="#626c73"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_star"
+        app:layout_constraintStart_toEndOf="@+id/iv_star"
+        app:layout_constraintTop_toTopOf="@+id/iv_star" />
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:text="13h"
+        android:textColor="#626c73"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_username_2"
+        app:layout_constraintStart_toEndOf="@+id/tv_username_2"
+        app:layout_constraintTop_toTopOf="@+id/tv_username_2" />
+
+    <TextView
+        android:id="@+id/tv_mensaje"
+        android:layout_width="310dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="10dp"
+        android:text="Este es el tweet"
+        android:textColor="#55595b"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/tv_username"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tv_username"
+        app:layout_constraintTop_toBottomOf="@+id/tv_username" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

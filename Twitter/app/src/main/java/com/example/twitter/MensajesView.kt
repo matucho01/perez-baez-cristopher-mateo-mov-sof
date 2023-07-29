@@ -7,23 +7,22 @@ import android.widget.ImageButton
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
-class MainActivity : AppCompatActivity() {
-    private val arregloTweets = DBMemoria.arregloTweets
-
+class MensajesView : AppCompatActivity() {
+    private val arregloMessages = DBMemoria.arregloMensajes
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_mensajes)
 
-        initRVTweets(R.id.rv_tweet, arregloTweets)
-        val botonIrMensajes = findViewById<ImageButton>(R.id.btn_messages)
-        botonIrMensajes.setOnClickListener {
-            irActividad(MensajesView::class.java)
+        initRVMessages(R.id.rv_message, arregloMessages)
+        val botonIrHome = findViewById<ImageButton>(R.id.btn_home)
+        botonIrHome.setOnClickListener {
+            irActividad(MainActivity::class.java)
         }
     }
 
-    fun initRVTweets(reference: Int, arreglo: List<Tweet>){
+    fun initRVMessages(reference: Int, arreglo: List<Message>){
         val recyclerView = findViewById<RecyclerView>(reference)
-        val adapter = RVAdapterTweet(
+        val adapter = RVAdapterMessage(
             this,
             arreglo,
             recyclerView
@@ -33,7 +32,6 @@ class MainActivity : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         adapter.notifyDataSetChanged()
     }
-
 
     fun irActividad(
         clase: Class<*>
