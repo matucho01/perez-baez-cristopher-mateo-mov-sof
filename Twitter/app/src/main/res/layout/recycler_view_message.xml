@@ -74,7 +74,7 @@
 
     <TextView
         android:id="@+id/tv_mensaje"
-        android:layout_width="310dp"
+        android:layout_width="298dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="10dp"
