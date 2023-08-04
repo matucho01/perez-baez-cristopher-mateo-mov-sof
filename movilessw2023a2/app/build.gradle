@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'com.google.gms.google-services'
     id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
 }
 
@@ -43,8 +44,11 @@ dependencies {
 
     // Librearia de Autenticacion
     implementation 'com.google.firebase:firebase-auth:21.1.0'
+    implementation 'com.google.android.gms:play-services-auth:20.0.1'
+
     // UI libreria auth
     implementation 'com.firebaseui:firebase-ui-auth:7.2.0'
+
     // Firestore
     implementation 'com.google.firebase:firebase-firestore-ktx'
 
