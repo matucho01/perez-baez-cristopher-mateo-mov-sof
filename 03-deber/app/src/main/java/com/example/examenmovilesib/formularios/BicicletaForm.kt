@@ -10,21 +10,21 @@ import android.widget.TextView
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import com.example.examenmovilesib.Bicicletas
+import com.example.examenmovilesib.DB
 import com.example.examenmovilesib.R
 import com.example.examenmovilesib.dao.BicicletaDAO
 import com.example.examenmovilesib.dao.MarcaDAO
 import com.example.examenmovilesib.modelo.Bicicleta
 
 class BicicletaForm : AppCompatActivity() {
-    private val bicicletaDao = BicicletaDAO()
-    private val marcaDao = MarcaDAO()
-    var id: Int? =null
-    private var marcaId: Int? =null
-
+    private val bicicletaDao: BicicletaDAO = DB.bicicletaDAO!!
+    private val marcaDao: MarcaDAO = DB.marcaDAO!!
+    var id: Int? = null
+    private var marcaId: Int? = null
     private val callback = registerForActivityResult(
         ActivityResultContracts.StartActivityForResult()
     ) {
-            result ->
+        result ->
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

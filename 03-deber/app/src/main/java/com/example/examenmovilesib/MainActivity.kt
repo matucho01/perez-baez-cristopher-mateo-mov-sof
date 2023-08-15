@@ -12,15 +12,18 @@ import android.widget.Button
 import android.widget.ListView
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
+import com.example.examenmovilesib.dao.BicicletaDAO
 import com.example.examenmovilesib.dao.MarcaDAO
 import com.example.examenmovilesib.formularios.MarcaForm
 import com.example.examenmovilesib.modelo.Marca
 
 class MainActivity : AppCompatActivity() {
 
-    private val marcaDao = MarcaDAO()
     private lateinit var adaptador: ArrayAdapter<Marca>
     private var idItemSeleccionado = 0
+    lateinit var listView: ListView
+
+    private lateinit var marcaDao: MarcaDAO
 
     private val callback=  registerForActivityResult(
         ActivityResultContracts.StartActivityForResult()
@@ -31,7 +34,13 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val listView = findViewById<ListView>(R.id.lv_marcas)
+
+        DB.marcaDAO = MarcaDAO(this)
+        DB.bicicletaDAO = BicicletaDAO(this)
+
+        this.marcaDao = DB.marcaDAO!!
+
+        listView = findViewById<ListView>(R.id.lv_marcas)
         adaptador = ArrayAdapter(
             this,
             android.R.layout.simple_list_item_1,

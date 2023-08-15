@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
+import com.example.examenmovilesib.DB
 import com.example.examenmovilesib.MainActivity
 import com.example.examenmovilesib.R
 import com.example.examenmovilesib.dao.MarcaDAO
@@ -17,7 +18,7 @@ import java.time.format.DateTimeFormatter
 
 class MarcaForm : AppCompatActivity() {
 
-    private val marcaDao = MarcaDAO()
+    private val marcaDao: MarcaDAO = DB.marcaDAO!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -18,9 +18,12 @@ import com.example.examenmovilesib.modelo.Bicicleta
 
 class Bicicletas : AppCompatActivity() {
 
-    private val bicicletaDao = BicicletaDAO()
     private lateinit var adaptador: ArrayAdapter<Bicicleta>
+    lateinit var listView: ListView
     private var idItemSeleccionado = 0
+    val arrayAux = arrayListOf<Bicicleta>()
+    lateinit var bicicletaDao: BicicletaDAO
+
     var id: Int? = -1
 
     val callback = registerForActivityResult(
@@ -32,11 +35,13 @@ class Bicicletas : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_marcas)
-        id = intent.getIntExtra("id", -1)
 
+        bicicletaDao = DB.bicicletaDAO!!
+
+        id = intent.getIntExtra("id", -1)
+        listView = findViewById<ListView>(R.id.lv_view_bicicletas)
 
         if (id != -1) {
-            val listView = findViewById<ListView>(R.id.lv_view_bicicletas)
             adaptador = ArrayAdapter(
                 this,
                 android.R.layout.simple_list_item_1,
