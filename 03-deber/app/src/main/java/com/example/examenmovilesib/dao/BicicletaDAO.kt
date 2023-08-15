@@ -1,33 +1,48 @@
 package com.example.examenmovilesib.dao
 
-import com.example.examenmovilesib.BDDMemoria
+import android.content.ContentValues
+import android.content.Context
+import android.database.sqlite.SQLiteDatabase
+import com.example.examenmovilesib.DB
 import com.example.examenmovilesib.modelo.Bicicleta
 
-class BicicletaDAO(): DAO<Bicicleta>() {
+class BicicletaDAO(
+    context: Context?,
+): DAO<Bicicleta>(context) {
+
+    override fun onCreate(db: SQLiteDatabase?) {
+    }
+
+    override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
+    }
+
+    override fun add(bicicleta: Bicicleta) {
+        val conexionEscritura = writableDatabase
+        val valores = ContentValues()
+        valores.put("NOMBRE", bicicleta.getModelo())
+        valores.put("TIPO", bicicleta.getTipo())
+        valores.put("ANIO", bicicleta.getAnio())
+        valores.put("PRECIO", bicicleta.getPrecio())
+        valores.put("DISPONIBLE", bicicleta.getDisponible())
+        valores.put("MARCA_ID", bicicleta.getMarcaId())
+        conexionEscritura.insert("BICICLETA", null, valores)
+        conexionEscritura.close()
+    }
+
+    override fun edit(bicicleta: Bicicleta) {
+        TODO("Not yet implemented")
+    }
+
     override fun delete(id: Int): Boolean {
-        return BDDMemoria.listaBicicletas.removeIf { it.getId() == id }
+        TODO("Not yet implemented")
     }
 
     override fun get(id: Int): Bicicleta? {
-        return BDDMemoria.listaBicicletas.firstOrNull { bicicleta: Bicicleta -> bicicleta.getId() == id }
+        TODO("Not yet implemented")
     }
 
     override fun getLista(): List<Bicicleta> {
-        return BDDMemoria.listaBicicletas
+        TODO("Not yet implemented")
     }
 
-    fun getLista(marcaId: Int): List<Bicicleta> {
-        return BDDMemoria.listaBicicletas.filter { it.getMarcaId() == marcaId }
-    }
-
-    override fun edit(t: Bicicleta) {
-        val indice = BDDMemoria.listaBicicletas.indexOfFirst { it.getId() == t.getId() }
-        BDDMemoria.listaBicicletas.set(indice,t)
-    }
-
-    override fun add(t: Bicicleta) {
-        val idFinal = BDDMemoria.listaBicicletas.last().getId()
-        t.setId(idFinal + 1);
-        BDDMemoria.listaBicicletas.add(t)
-    }
 }
