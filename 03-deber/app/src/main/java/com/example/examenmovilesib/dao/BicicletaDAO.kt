@@ -3,7 +3,6 @@ package com.example.examenmovilesib.dao
 import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
-import com.example.examenmovilesib.DB
 import com.example.examenmovilesib.modelo.Bicicleta
 
 class BicicletaDAO(
@@ -19,7 +18,7 @@ class BicicletaDAO(
     override fun add(bicicleta: Bicicleta) {
         val conexionEscritura = writableDatabase
         val valores = ContentValues()
-        valores.put("NOMBRE", bicicleta.getModelo())
+        valores.put("MODELO", bicicleta.getModelo())
         valores.put("TIPO", bicicleta.getTipo())
         valores.put("ANIO", bicicleta.getAnio())
         valores.put("PRECIO", bicicleta.getPrecio())
@@ -32,7 +31,7 @@ class BicicletaDAO(
     override fun edit(bicicleta: Bicicleta) {
         val conexionEscritura = writableDatabase
         val valores = ContentValues()
-        valores.put("NOMBRE", bicicleta.getModelo())
+        valores.put("MODELO", bicicleta.getModelo())
         valores.put("TIPO", bicicleta.getTipo())
         valores.put("ANIO", bicicleta.getAnio())
         valores.put("PRECIO", bicicleta.getPrecio())
@@ -64,7 +63,7 @@ class BicicletaDAO(
         val conexionLectura = readableDatabase
         val scriptConsulta =
             """
-            SELECT * FROM BICICLETA WHERE ID = ${id}
+            SELECT * FROM BICICLETA WHERE ID = ?
             """.trimIndent()
         val parametrosConsulta = arrayOf(id.toString())
         val resultadoConsulta = conexionLectura.rawQuery(
@@ -75,13 +74,13 @@ class BicicletaDAO(
         val existeBicicleta: Bicicleta?
         if(resultadoConsulta.moveToFirst()) {
             val id = resultadoConsulta.getInt(0)
-            val nombre = resultadoConsulta.getString(1)
+            val modelo = resultadoConsulta.getString(1)
             val tipo = resultadoConsulta.getString(2)
             val anio = resultadoConsulta.getInt(3)
             val precio = resultadoConsulta.getDouble(4)
             val disponible = resultadoConsulta.getInt(5) != 0
             val marcaId = resultadoConsulta.getInt(6)
-            existeBicicleta = Bicicleta(id, nombre, tipo, anio, precio, disponible, marcaId)
+            existeBicicleta = Bicicleta(id, modelo, tipo, anio, precio, disponible, marcaId)
         } else {
             existeBicicleta = null
         }
@@ -101,13 +100,13 @@ class BicicletaDAO(
         if (resultadoConsulta.moveToFirst()) {
             do {
                 val id = resultadoConsulta.getInt(0)
-                val nombre = resultadoConsulta.getString(1)
+                val modelo = resultadoConsulta.getString(1)
                 val tipo = resultadoConsulta.getString(2)
                 val anio = resultadoConsulta.getInt(3)
                 val precio = resultadoConsulta.getDouble(4)
                 val disponible = resultadoConsulta.getInt(5) != 0
                 val marcaId = resultadoConsulta.getInt(6)
-                val bicicletaEncontrada = Bicicleta(id, nombre, tipo, anio, precio, disponible, marcaId)
+                val bicicletaEncontrada = Bicicleta(id, modelo, tipo, anio, precio, disponible, marcaId)
                 arregloBicicletas.add(bicicletaEncontrada)
             } while (resultadoConsulta.moveToNext())
         }
@@ -128,13 +127,13 @@ class BicicletaDAO(
         if (resultadoConsulta.moveToFirst()) {
             do {
                 val id = resultadoConsulta.getInt(0)
-                val nombre = resultadoConsulta.getString(1)
+                val modelo = resultadoConsulta.getString(1)
                 val tipo = resultadoConsulta.getString(2)
                 val anio = resultadoConsulta.getInt(3)
                 val precio = resultadoConsulta.getDouble(4)
                 val disponible = resultadoConsulta.getInt(5) != 0
                 val marcaId = resultadoConsulta.getInt(6)
-                val bicicletaEncontrada = Bicicleta(id, nombre, tipo, anio, precio, disponible, marcaId)
+                val bicicletaEncontrada = Bicicleta(id, modelo, tipo, anio, precio, disponible, marcaId)
                 arregloBicicletas.add(bicicletaEncontrada)
             } while (resultadoConsulta.moveToNext())
         }

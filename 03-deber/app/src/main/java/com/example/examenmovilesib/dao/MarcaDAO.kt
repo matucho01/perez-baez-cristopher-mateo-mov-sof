@@ -27,7 +27,8 @@ class MarcaDAO(
             """
             CREATE TABLE BICICLETA(
                ID INTEGER PRIMARY KEY AUTOINCREMENT,
-               NOMBRE VARCHAR(100),
+               MODELO VARCHAR(100),
+               TIPO VARCHAR(100),
                ANIO INTEGER,
                PRECIO REAL,
                DISPONIBLE INTEGER,
