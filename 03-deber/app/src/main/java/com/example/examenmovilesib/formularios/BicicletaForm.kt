@@ -17,6 +17,7 @@ import com.example.examenmovilesib.dao.MarcaDAO
 import com.example.examenmovilesib.modelo.Bicicleta
 
 class BicicletaForm : AppCompatActivity() {
+
     private val bicicletaDao: BicicletaDAO = DB.bicicletaDAO!!
     private val marcaDao: MarcaDAO = DB.marcaDAO!!
     var id: Int? = null

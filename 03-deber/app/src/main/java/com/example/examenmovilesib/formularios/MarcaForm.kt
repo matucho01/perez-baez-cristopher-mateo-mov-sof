@@ -23,6 +23,7 @@ class MarcaForm : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_marca_form)
+
         val id: Int? = intent.getIntExtra("id",-1)
 
         val nombreMarcaInput = findViewById<EditText>(R.id.input_nombre_marca)
