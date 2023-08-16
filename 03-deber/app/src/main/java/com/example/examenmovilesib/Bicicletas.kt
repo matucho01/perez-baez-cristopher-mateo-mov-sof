@@ -19,14 +19,13 @@ import com.example.examenmovilesib.modelo.Bicicleta
 class Bicicletas : AppCompatActivity() {
 
     private lateinit var adaptador: ArrayAdapter<Bicicleta>
-    lateinit var listView: ListView
+    private lateinit var listView: ListView
     private var idItemSeleccionado = 0
-    val arrayAux = arrayListOf<Bicicleta>()
-    lateinit var bicicletaDao: BicicletaDAO
+    private lateinit var bicicletaDao: BicicletaDAO
 
     var id: Int? = -1
 
-    val callback = registerForActivityResult(
+    private val callback = registerForActivityResult(
         ActivityResultContracts.StartActivityForResult()
     ) {
             result ->

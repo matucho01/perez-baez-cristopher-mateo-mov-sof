@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var adaptador: ArrayAdapter<Marca>
     private var idItemSeleccionado = 0
-    lateinit var listView: ListView
+    private lateinit var listView: ListView
 
     private lateinit var marcaDao: MarcaDAO
 
