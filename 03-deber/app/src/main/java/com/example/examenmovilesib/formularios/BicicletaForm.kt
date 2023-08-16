@@ -30,6 +30,7 @@ class BicicletaForm : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_bicicleta_form)
+
         id = intent.getIntExtra("id", -1)
         marcaId = intent.getIntExtra("marcaId", -1)
 
@@ -122,6 +123,7 @@ class BicicletaForm : AppCompatActivity() {
 
                         bicicletaDao.add(bicicleta)
                         abrirDialogo("Bicicleta registrada")
+
                         modeloInput.setText("")
                         tipoInput.setText("")
                         anioInput.setText("")

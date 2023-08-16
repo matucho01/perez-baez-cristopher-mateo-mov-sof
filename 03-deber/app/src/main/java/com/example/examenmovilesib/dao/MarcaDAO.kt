@@ -48,6 +48,7 @@ class MarcaDAO(
         valores.put("PAIS", marca.getPais())
         valores.put("FECHA_CREACION", marca.getFechaCreacion().toString())
         valores.put("SEDE", marca.getSede())
+
         conexionEscritura.insert("MARCA", null, valores)
         conexionEscritura.close()
     }
@@ -59,11 +60,12 @@ class MarcaDAO(
         valores.put("PAIS", marca.getPais())
         valores.put("FECHA_CREACION", marca.getFechaCreacion().toString())
         valores.put("SEDE", marca.getSede())
+
         val parametrosConsulta = arrayOf(marca.getId().toString())
         val resultadoUpdate = conexionEscritura.update(
             "MARCA",
             valores,
-            "ID = ?",
+            "ID=?",
             parametrosConsulta
         )
         conexionEscritura.close()
@@ -74,7 +76,7 @@ class MarcaDAO(
         val parametrosConsulta = arrayOf(id.toString())
         val resultadoDelete = conexionEscritura.delete(
             "MARCA",
-            "ID = ?",
+            "ID=?",
             parametrosConsulta
         )
         conexionEscritura.close()
@@ -109,6 +111,7 @@ class MarcaDAO(
 
         resultadoConsulta.close()
         conexionLectura.close()
+
         return existeMarca
     }
 
