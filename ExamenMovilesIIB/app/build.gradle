@@ -1,15 +1,16 @@
 plugins {
     id 'com.android.application'
-    id 'org.jetbrains.kotlin.android'
     id 'com.google.gms.google-services'
+    id 'org.jetbrains.kotlin.android'
+
 }
 
 android {
-    namespace 'com.example.examenmovilesib'
+    namespace 'com.example.examen1bmoviles'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.examenmovilesib"
+        applicationId "com.example.examen1bmoviles"
         minSdk 26
         targetSdk 33
         versionCode 1
@@ -34,18 +35,10 @@ android {
 }
 
 dependencies {
-    //Firebase
-    // Firebase
-    implementation platform('com.google.firebase:firebase-bom:30.1.0')
 
+    implementation platform('com.google.firebase:firebase-bom:32.2.3')
 
-    // Librearia de Autenticacion
-    implementation 'com.google.android.gms:play-services-auth:20.0.1'
-    implementation 'com.google.firebase:firebase-auth:21.1.0'
-    // UI libreria auth
-    implementation 'com.firebaseui:firebase-ui-auth:7.2.0'
-    // Firestore
-    implementation 'com.google.firebase:firebase-firestore-ktx:24.7.1'
+    implementation 'com.google.firebase:firebase-analytics-ktx'
 
     implementation 'androidx.core:core-ktx:1.8.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
@@ -54,4 +47,6 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    implementation('com.google.firebase:firebase-firestore:24.7.1')
+    implementation('com.google.firebase:firebase-firestore-ktx:24.7.1')
 }

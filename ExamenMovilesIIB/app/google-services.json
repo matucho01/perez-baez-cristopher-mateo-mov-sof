@@ -1,36 +1,26 @@
 {
   "project_info": {
-    "project_number": "1061049896189",
-    "project_id": "examenmovilesib",
-    "storage_bucket": "examenmovilesib.appspot.com"
+    "project_number": "97631292559",
+    "project_id": "examenmovilesiib",
+    "storage_bucket": "examenmovilesiib.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1061049896189:android:bf26bc7e97ed9cdb974294",
+        "mobilesdk_app_id": "1:97631292559:android:ca5bdf9f607f70607db4fa",
         "android_client_info": {
-          "package_name": "com.example.examenmovilesib"
+          "package_name": "com.example.examen1bmoviles"
         }
       },
-      "oauth_client": [
-        {
-          "client_id": "1061049896189-2e6lkd9cs1eovi9d91nchmabg6rivf6b.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
+      "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyC8HorYW_FzU4Zqjs-pXyniqDVn5QxQBy4"
+          "current_key": "AIzaSyBXfJFUpB7WfB_Dl7RdWQJz8ZwRfgJI8KA"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "1061049896189-2e6lkd9cs1eovi9d91nchmabg6rivf6b.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "other_platform_oauth_client": []
         }
       }
     }
