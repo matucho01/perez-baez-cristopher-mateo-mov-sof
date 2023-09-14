@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".formularios.MarcaForm">
+
+    <TextView
+        android:id="@+id/tv_marca_actual"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Marca"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.09" />
+
+    <EditText
+        android:id="@+id/input_nombre_marca"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:ems="10"
+        android:hint="Nombre de marca"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="@+id/tv_marca_actual"
+        app:layout_constraintStart_toStartOf="@+id/tv_marca_actual"
+        app:layout_constraintTop_toBottomOf="@+id/tv_marca_actual" />
+
+    <EditText
+        android:id="@+id/input_pais"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:ems="10"
+        android:hint="País de origen"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="@+id/input_nombre_marca"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/input_nombre_marca"
+        app:layout_constraintTop_toBottomOf="@+id/input_nombre_marca" />
+
+    <EditText
+        android:id="@+id/input_fecha_creacion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:ems="10"
+        android:hint="Fecha de creación"
+        android:inputType="date"
+        app:layout_constraintEnd_toEndOf="@+id/input_pais"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/input_pais"
+        app:layout_constraintTop_toBottomOf="@+id/input_pais" />
+
+    <EditText
+        android:id="@+id/input_sede"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:ems="10"
+        android:hint="Sede"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="@+id/input_fecha_creacion"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/input_fecha_creacion"
+        app:layout_constraintTop_toBottomOf="@+id/input_fecha_creacion" />
+
+    <Button
+        android:id="@+id/btn_crear"
+        android:layout_width="102dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="96dp"
+        android:text="Aceptar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.266"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/input_sede"
+        app:layout_constraintVertical_bias="0.25" />
+
+    <Button
+        android:id="@+id/btn_cancelar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="96dp"
+        android:text="Cancelar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/input_sede"
+        app:layout_constraintVertical_bias="0.25" />
+</androidx.constraintlayout.widget.ConstraintLayout>
