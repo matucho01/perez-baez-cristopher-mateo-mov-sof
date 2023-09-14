@@ -14,7 +14,7 @@ import android.widget.TextView
 import com.example.examen1bmoviles.controller.ActualizarBicicleta
 import com.example.examen1bmoviles.controller.CrearBicicleta
 import com.example.examen1bmoviles.model.Bicicleta
-import com.example.examenmovilesib.R
+import com.example.examen1bmoviles.R
 import com.google.firebase.firestore.QueryDocumentSnapshot
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
