@@ -10,10 +10,10 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.ListView
-import com.example.examen1bmoviles.R
 import com.example.examen1bmoviles.controller.ActualizarMarca
 import com.example.examen1bmoviles.controller.CrearMarca
 import com.example.examen1bmoviles.model.Marca
+import com.example.examenmovilesib.R
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.QueryDocumentSnapshot
